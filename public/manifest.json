@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Sem4 ITER",
+  "name": "Semester 4 ITER",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +18,42 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#ffc400",
+  "background_color": "#303030",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Advanced Discrete Mathematics",
+      "short_name": "ADM",
+      "description": "Advanced Discrete Mathematics",
+      "url": "/adm"
+    },
+    {
+      "name": "Computer Organization and Architecture",
+      "short_name": "COA",
+      "description": "Computer Organization and Architecture",
+      "url": "/coa"
+    },
+    {
+      "name": "Algorithms Design - 1",
+      "short_name": "AD1",
+      "description": "Algorithms Design - 1",
+      "url": "/ad1"
+    },
+    {
+      "name": "Principles of Macroeconomics",
+      "short_name": "PME",
+      "description": "Principles of Macroeconomics",
+      "url": "/pme"
+    },
+    {
+      "name": "Computer Science Workshop - 2",
+      "short_name": "CSW2",
+      "description": "Computer Science Workshop - 2",
+      "url": "/csw2"
+    }
+  ],
+  "description": "Semester 4 Important calculators and notes"
 }
