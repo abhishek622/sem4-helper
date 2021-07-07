@@ -8,17 +8,12 @@ import { useStyles } from '../../styles/Form.style';
 const initialValues = {
   a: '',
   b: '',
+  c: '',
+  d: '',
+  e: '',
 };
 
-const calculate = (w, x) => {
-  let a = parseFloat(w);
-  let b = parseFloat(x);
-  return (100 * ((a - b) / b)).toLocaleString('en-US', {
-    maximumFractionDigits: 3,
-  });
-};
-
-export default function InflationRate() {
+export default function TtoT() {
   const classes = useStyles();
   const [values, setValues] = useState(initialValues);
   const [sol, setSol] = useState('');
@@ -38,7 +33,13 @@ export default function InflationRate() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setSol(calculate(values.a, values.b));
+    setSol(
+      (
+        parseFloat(values.a) *
+        (parseFloat(values.b) + parseFloat(values.c) * parseFloat(values.d)) *
+        parseFloat(values.e)
+      ).toFixed(4)
+    );
   };
 
   return (
@@ -46,7 +47,7 @@ export default function InflationRate() {
       <Box mt={2}>
         <Typography variant="h6">Formula</Typography>
         <Formula
-          tex={`Inflation\\ rate\\ =\\ \\frac{CPI_{Y2}\\ -\\ CPI_{Y1}}{CPI_{Y1}}\\times100`}
+          tex={`T\\ =\\ I_{c}\\times \\left[p+\\left(m\\times k\\right)\\right]\\times \\tau`}
         />
       </Box>
       <div className={classes.whiteSpace} />
@@ -56,7 +57,7 @@ export default function InflationRate() {
           <Grid item xs={12} sm={6}>
             <Controls.Input
               type="number"
-              label="CPI (Year 2)"
+              label="Ic"
               name="a"
               value={values.a}
               onChange={handleInputChange}
@@ -67,9 +68,42 @@ export default function InflationRate() {
           <Grid item xs={12} sm={6}>
             <Controls.Input
               type="number"
-              label="CPI (Year 1)"
+              label="processor cycles (p)"
               name="b"
               value={values.b}
+              onChange={handleInputChange}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Controls.Input
+              type="number"
+              label="memory references (m)"
+              name="c"
+              value={values.c}
+              onChange={handleInputChange}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Controls.Input
+              type="number"
+              label="Ratio (k)"
+              name="d"
+              value={values.d}
+              onChange={handleInputChange}
+              required
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Controls.Input
+              type="number"
+              label="&#120591;"
+              name="e"
+              value={values.e}
               onChange={handleInputChange}
               required
               fullWidth

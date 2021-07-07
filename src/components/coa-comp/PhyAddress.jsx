@@ -10,15 +10,7 @@ const initialValues = {
   b: '',
 };
 
-const calculate = (w, x) => {
-  let a = parseFloat(w);
-  let b = parseFloat(x);
-  return (100 * ((a - b) / b)).toLocaleString('en-US', {
-    maximumFractionDigits: 3,
-  });
-};
-
-export default function InflationRate() {
+export default function PhyAddress() {
   const classes = useStyles();
   const [values, setValues] = useState(initialValues);
   const [sol, setSol] = useState('');
@@ -38,16 +30,14 @@ export default function InflationRate() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setSol(calculate(values.a, values.b));
+    setSol(parseFloat(values.a) * 10 + parseFloat(values.b));
   };
 
   return (
     <Container component="main">
       <Box mt={2}>
         <Typography variant="h6">Formula</Typography>
-        <Formula
-          tex={`Inflation\\ rate\\ =\\ \\frac{CPI_{Y2}\\ -\\ CPI_{Y1}}{CPI_{Y1}}\\times100`}
-        />
+        <Formula tex={`Address=CS\\times 10+IP`} />
       </Box>
       <div className={classes.whiteSpace} />
 
@@ -56,7 +46,7 @@ export default function InflationRate() {
           <Grid item xs={12} sm={6}>
             <Controls.Input
               type="number"
-              label="CPI (Year 2)"
+              label="CS"
               name="a"
               value={values.a}
               onChange={handleInputChange}
@@ -67,7 +57,7 @@ export default function InflationRate() {
           <Grid item xs={12} sm={6}>
             <Controls.Input
               type="number"
-              label="CPI (Year 1)"
+              label="IP"
               name="b"
               value={values.b}
               onChange={handleInputChange}

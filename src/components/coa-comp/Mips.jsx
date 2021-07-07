@@ -13,12 +13,10 @@ const initialValues = {
 const calculate = (w, x) => {
   let a = parseFloat(w);
   let b = parseFloat(x);
-  return (100 * ((a - b) / b)).toLocaleString('en-US', {
-    maximumFractionDigits: 3,
-  });
+  return (a / (b * Math.pow(10, 6))).toFixed(9);
 };
 
-export default function InflationRate() {
+export default function Mips() {
   const classes = useStyles();
   const [values, setValues] = useState(initialValues);
   const [sol, setSol] = useState('');
@@ -46,7 +44,7 @@ export default function InflationRate() {
       <Box mt={2}>
         <Typography variant="h6">Formula</Typography>
         <Formula
-          tex={`Inflation\\ rate\\ =\\ \\frac{CPI_{Y2}\\ -\\ CPI_{Y1}}{CPI_{Y1}}\\times100`}
+          tex={`MIPS\\ rate=\\frac{I_{c}}{T\\times 10^{6}} =\\frac{f}{CPI\\times 10^{6}}`}
         />
       </Box>
       <div className={classes.whiteSpace} />
@@ -56,7 +54,7 @@ export default function InflationRate() {
           <Grid item xs={12} sm={6}>
             <Controls.Input
               type="number"
-              label="CPI (Year 2)"
+              label="Ic or f"
               name="a"
               value={values.a}
               onChange={handleInputChange}
@@ -67,7 +65,7 @@ export default function InflationRate() {
           <Grid item xs={12} sm={6}>
             <Controls.Input
               type="number"
-              label="CPI (Year 1)"
+              label="T or CPI"
               name="b"
               value={values.b}
               onChange={handleInputChange}

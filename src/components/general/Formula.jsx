@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       maxWidth: 290,
       overflowY: 'hidden',
-      fontSize: '0.7rem',
+      fontSize: '0.74rem',
     },
     fontSize: '1rem',
     padding: '0px 2px 6px 2px',
