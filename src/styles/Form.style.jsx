@@ -11,12 +11,4 @@ export const useStyles = makeStyles(theme => ({
   col: {
     alignItems: 'center',
   },
-  btnGrp: {
-    [theme.breakpoints.down('xs')]: {
-      '& .MuiButton-root': {
-        fontSize: '14px',
-        padding: '4px 7px',
-      },
-    },
-  },
 }));

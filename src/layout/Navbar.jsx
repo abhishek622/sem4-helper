@@ -54,27 +54,27 @@ export const Navbar = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <Button component={RouteLink} to="/adm" color="inherit">
+        <Button component={RouteLink} to="/adm">
           Adm
         </Button>
       </MenuItem>
       <MenuItem>
-        <Button component={RouteLink} to="/coa" color="inherit">
+        <Button component={RouteLink} to="/coa">
           Coa
         </Button>
       </MenuItem>
       <MenuItem>
-        <Button component={RouteLink} to="/ad1" color="inherit">
+        <Button component={RouteLink} to="/ad1">
           Ad1
         </Button>
       </MenuItem>
       <MenuItem>
-        <Button component={RouteLink} to="/pme" color="inherit">
+        <Button component={RouteLink} to="/pme">
           Pme
         </Button>
       </MenuItem>
       <MenuItem>
-        <Button component={RouteLink} to="/csw2" color="inherit">
+        <Button component={RouteLink} to="/csw2">
           Csw2
         </Button>
       </MenuItem>
@@ -98,19 +98,19 @@ export const Navbar = () => {
 
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <Button component={RouteLink} to="/adm" color="inherit">
+            <Button component={RouteLink} to="/adm">
               Adm
             </Button>
-            <Button component={RouteLink} to="/coa" color="inherit">
+            <Button component={RouteLink} to="/coa">
               Coa
             </Button>
-            <Button component={RouteLink} to="/ad1" color="inherit">
+            <Button component={RouteLink} to="/ad1">
               Ad1
             </Button>
-            <Button component={RouteLink} to="/pme" color="inherit">
+            <Button component={RouteLink} to="/pme">
               Pme
             </Button>
-            <Button component={RouteLink} to="/csw2" color="inherit">
+            <Button component={RouteLink} to="/csw2">
               Csw2
             </Button>
           </div>
@@ -119,7 +119,6 @@ export const Navbar = () => {
               aria-label="show more"
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color="inherit"
             >
               <MoreIcon />
             </IconButton>
