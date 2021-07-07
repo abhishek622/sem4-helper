@@ -3,7 +3,7 @@ import { Paper, Link as MuiLink } from '@material-ui/core';
 import { Link as RouteLink } from 'react-router-dom';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Typography } from '@material-ui/core';
-import {useStyles} from '../styles/Home.style'
+import { useStyles } from '../styles/Home.style';
 
 export const Home = () => {
   const classes = useStyles();
@@ -20,7 +20,7 @@ export const Home = () => {
             Semster 4
           </Typography>
           <Typography variant="h4" align="center" gutterBottom>
-            Calculator
+            End <s style={{ fontWeight: 300 }}>Game</s> Sem
           </Typography>
         </div>
         <div className={classes.subject}>
