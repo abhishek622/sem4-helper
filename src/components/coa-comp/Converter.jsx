@@ -38,7 +38,7 @@ export default function Converter() {
     <Container component="main">
       <form className={classes.form} autoComplete="off" onSubmit={handleSubmit}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12}>
             <Controls.Input
               type="text"
               label="Number"
