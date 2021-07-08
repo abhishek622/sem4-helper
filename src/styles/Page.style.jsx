@@ -6,7 +6,7 @@ export const useStyles = makeStyles(theme => ({
       margin: 'auto',
       width: '50%',
     },
-    [theme.breakpoints.between('sm', 'md')]: {
+    [theme.breakpoints.only('md')]: {
       margin: 'auto',
       width: '70%',
     },
