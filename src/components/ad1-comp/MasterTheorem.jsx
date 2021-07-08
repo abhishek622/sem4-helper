@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { Typography, Divider } from '@material-ui/core';
@@ -122,6 +122,25 @@ export default function MasterTheorem() {
 
     return result;
   };
+
+  useEffect(() => {
+    if (
+      values.a !== '' &&
+      values.a >= 0 &&
+      values.b !== '' &&
+      values.b > 1 &&
+      values.k !== '' &&
+      values.k >= 0 &&
+      values.i !== '' &&
+      values.i >= 0
+    ) {
+      setExp(print(values.a, values.b, values.k, values.i));
+      setSol(calculate(values.a, values.b, values.k, values.i));
+    } else {
+      setExp('');
+      setSol('');
+    }
+  }, [values]);
 
   const handleSubmit = e => {
     e.preventDefault();
