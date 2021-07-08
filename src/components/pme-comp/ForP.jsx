@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Grid, Box, Typography } from '@material-ui/core';
 
 import Formula from '../general/Formula';
@@ -27,6 +27,8 @@ export default function ForP() {
   const [n, setN] = useState('');
   const [p, setP] = useState('');
   const [errors, setErrors] = useState({});
+  const [input1, setInput1] = useState(false);
+  const [input2, setInput2] = useState(false);
 
   const validate = () => {
     let temp = {};
@@ -68,11 +70,24 @@ export default function ForP() {
     }
   };
 
+  useEffect(() => {
+    if (f !== '') {
+      setInput2(true);
+    } else if (p !== '') {
+      setInput1(true);
+    } else {
+      setInput1(false);
+      setInput2(false);
+    }
+  }, [f, p]);
+
   const resetForm = () => {
     setF('');
     setI('');
     setN('');
     setP('');
+    setInput1(false);
+    setInput2(false);
     setErrors({});
   };
 
@@ -104,6 +119,9 @@ export default function ForP() {
               name="f"
               value={f}
               error={errors.f}
+              InputProps={{
+                readOnly: input1,
+              }}
               onChange={handleInputChange}
               fullWidth
             />
@@ -139,6 +157,9 @@ export default function ForP() {
               name="p"
               value={p}
               error={errors.p}
+              InputProps={{
+                readOnly: input2,
+              }}
               onChange={handleInputChange}
               fullWidth
             />

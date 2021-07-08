@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Grid, Box, Typography } from '@material-ui/core';
 
 import Formula from '../general/Formula';
@@ -31,6 +31,8 @@ export default function PorA() {
   const [n, setN] = useState('');
   const [p, setP] = useState('');
   const [errors, setErrors] = useState({});
+  const [input1, setInput1] = useState(false);
+  const [input2, setInput2] = useState(false);
 
   const validate = () => {
     let temp = {};
@@ -72,11 +74,24 @@ export default function PorA() {
     }
   };
 
+  useEffect(() => {
+    if (p !== '') {
+      setInput2(true);
+    } else if (a !== '') {
+      setInput1(true);
+    } else {
+      setInput1(false);
+      setInput2(false);
+    }
+  }, [p, a]);
+
   const resetForm = () => {
     setA('');
     setI('');
     setN('');
     setP('');
+    setInput1(false);
+    setInput2(false);
     setErrors({});
   };
 
@@ -111,6 +126,9 @@ export default function PorA() {
               value={a}
               onChange={handleInputChange}
               error={errors.a}
+              InputProps={{
+                readOnly: input1,
+              }}
               fullWidth
             />
           </Grid>
@@ -145,6 +163,9 @@ export default function PorA() {
               name="p"
               value={p}
               error={errors.p}
+              InputProps={{
+                readOnly: input2,
+              }}
               onChange={handleInputChange}
               fullWidth
             />
