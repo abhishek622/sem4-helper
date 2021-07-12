@@ -10,7 +10,7 @@ export const useStyles = makeStyles(theme => ({
     backgroundPosition: 'left bottom',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '380px',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       backgroundImage: 'none',
     },
   },
