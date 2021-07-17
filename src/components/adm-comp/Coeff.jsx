@@ -45,10 +45,10 @@ export default function Coeff() {
           &#40;2x<sub>1</sub> - 3x<sub>2</sub> + 5x<sub>3</sub>&#41;<sup>6</sup>
         </Typography>
         <Typography variant="caption" display="block" gutterBottom>
-          Coefficient of Expansion = 2,-3,5
+          Coefficient of Exp = 2,-3,5
         </Typography>
         <Typography variant="caption" display="block" gutterBottom>
-          Power of Expansion = 6
+          Power of Exp = 6
         </Typography>
         <Typography variant="caption" display="block" gutterBottom>
           x<sub>1</sub>
@@ -56,7 +56,7 @@ export default function Coeff() {
           <sup>2</sup>
         </Typography>
         <Typography variant="caption" display="block" gutterBottom>
-          Coefficient of eq = 3,1,2
+          Power of var = 3,1,2
         </Typography>
       </Box>
       <div className={classes.whiteSpace} />
@@ -65,7 +65,7 @@ export default function Coeff() {
         <Grid item sm={8} xs={12}>
           <Controls.Input
             type="text"
-            label="Coefficient of Expansion"
+            label="Coefficient of Exp"
             name="a"
             value={values.a}
             onChange={handleInputChange}
@@ -76,7 +76,7 @@ export default function Coeff() {
         <Grid item sm={4} xs={12}>
           <Controls.Input
             type="number"
-            label="Power of Expansion"
+            label="Power of Exp"
             name="b"
             value={values.b}
             onChange={handleInputChange}
@@ -87,7 +87,7 @@ export default function Coeff() {
         <Grid item xs={12} sm={6}>
           <Controls.Input
             type="text"
-            label="Coefficient of eq"
+            label="Power of var"
             name="c"
             value={values.c}
             onChange={handleInputChange}

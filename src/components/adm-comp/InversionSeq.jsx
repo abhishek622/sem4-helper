@@ -29,6 +29,7 @@ export default function InversionSeq() {
       <Controls.Input
         type="number"
         label="Enter Permutation"
+        placeholder="1234"
         name="value"
         value={value}
         onChange={e => setValue(e.target.value)}
