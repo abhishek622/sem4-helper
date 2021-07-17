@@ -10,6 +10,7 @@ const Converter = lazy(() => import('../components/coa-comp/Converter'));
 const PhyAddress = lazy(() => import('../components/coa-comp/PhyAddress'));
 const DirectMap = lazy(() => import('../components/coa-comp/DirectMap'));
 const HammingCode = lazy(() => import('../components/coa-comp/HammingCode'));
+const Operations = lazy(() => import('../components/coa-comp/Operations'));
 
 export const data = [
   {
@@ -90,6 +91,15 @@ export const data = [
     formSection: (
       <Suspense fallback={<Loading />}>
         <Converter />
+      </Suspense>
+    ),
+  },
+  {
+    id: 9,
+    title: 'Arithmetic Operations',
+    formSection: (
+      <Suspense fallback={<Loading />}>
+        <Operations />
       </Suspense>
     ),
   },
