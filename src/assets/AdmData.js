@@ -9,8 +9,18 @@ const Coeff = lazy(() => import('../components/adm-comp/Coeff'));
 const BinomialTheorem = lazy(() =>
   import('../components/adm-comp/BinomialTheorem')
 );
+const ChineseRT = lazy(() => import('../components/adm-comp/ChineseRT'));
 
 export const data = [
+  {
+    id: 0,
+    title: 'Chinese Remainder Theorem',
+    formSection: (
+      <Suspense fallback={<Loading />}>
+        <ChineseRT />
+      </Suspense>
+    ),
+  },
   {
     id: 1,
     title: 'Find Inversion Sequence',
