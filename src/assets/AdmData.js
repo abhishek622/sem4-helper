@@ -10,6 +10,8 @@ const BinomialTheorem = lazy(() =>
   import('../components/adm-comp/BinomialTheorem')
 );
 const ChineseRT = lazy(() => import('../components/adm-comp/ChineseRT'));
+const CountD = lazy(() => import('../components/adm-comp/CountD'));
+const Multiset = lazy(() => import('../components/adm-comp/Multiset'));
 
 export const data = [
   {
@@ -72,6 +74,24 @@ export const data = [
     formSection: (
       <Suspense fallback={<Loading />}>
         <Coeff />
+      </Suspense>
+    ),
+  },
+  {
+    id: 7,
+    title: 'Multiset Problem',
+    formSection: (
+      <Suspense fallback={<Loading />}>
+        <Multiset />
+      </Suspense>
+    ),
+  },
+  {
+    id: 8,
+    title: 'Count Derangements',
+    formSection: (
+      <Suspense fallback={<Loading />}>
+        <CountD />
       </Suspense>
     ),
   },
