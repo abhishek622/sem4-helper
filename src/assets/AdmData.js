@@ -12,6 +12,7 @@ const BinomialTheorem = lazy(() =>
 const ChineseRT = lazy(() => import('../components/adm-comp/ChineseRT'));
 const CountD = lazy(() => import('../components/adm-comp/CountD'));
 const Multiset = lazy(() => import('../components/adm-comp/Multiset'));
+const GAdd = lazy(() => import('../components/adm-comp/GAdd'));
 
 export const data = [
   {
@@ -92,6 +93,15 @@ export const data = [
     formSection: (
       <Suspense fallback={<Loading />}>
         <CountD />
+      </Suspense>
+    ),
+  },
+  {
+    id: 9,
+    title: 'Generators, order and cyclic group of Z',
+    formSection: (
+      <Suspense fallback={<Loading />}>
+        <GAdd />
       </Suspense>
     ),
   },

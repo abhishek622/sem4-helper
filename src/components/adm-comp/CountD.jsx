@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Box, Typography, Divider } from '@material-ui/core';
+import React, { useState } from 'react';
+import { Container, Box, Grid, Typography, Divider } from '@material-ui/core';
 
 import Controls from '../controls/Controls';
 import { useStyles } from '../../styles/Form.style';
@@ -24,36 +24,46 @@ export default function CountD() {
     setSol('');
   };
 
-  useEffect(() => {
-    if (value !== '') {
-      setSol(countDer(value));
-    } else {
-      setSol('');
-    }
-  }, [value]);
+  const handleSubmit = e => {
+    e.preventDefault();
+    setSol(countDer(value));
+  };
 
   return (
     <Container component="main">
       <div className={classes.whiteSpace} />
-      <Controls.Input
-        type="number"
-        label="Enter Number"
-        name="value"
-        value={value}
-        min="1"
-        onChange={e => setValue(e.target.value)}
-        required
-        fullWidth
-      />
+      <form className={classes.form} autoComplete="off" onSubmit={handleSubmit}>
+        <Controls.Input
+          type="number"
+          label="Enter Number"
+          name="value"
+          value={value}
+          InputProps={{
+            inputProps: {
+              max: 20,
+              min: 1,
+            },
+          }}
+          onChange={e => setValue(e.target.value)}
+          required
+          fullWidth
+        />
 
-      <div className={classes.whiteSpace} />
-
-      <Controls.Button
-        fullWidth
-        color="default"
-        onClick={resetForm}
-        text="Clear"
-      />
+        <div className={classes.whiteSpace} />
+        <Grid container spacing={1}>
+          <Grid item xs={12} sm={6}>
+            <Controls.Button fullWidth type="submit" text="Calculate" />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Controls.Button
+              fullWidth
+              color="default"
+              onClick={resetForm}
+              text="Clear"
+            />
+          </Grid>
+        </Grid>
+      </form>
 
       <Box mt={1}>
         <Divider style={{ margin: '8px 0px' }} />

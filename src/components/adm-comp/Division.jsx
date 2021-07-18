@@ -23,30 +23,14 @@ export default function Division() {
     });
   };
 
-  const [errors, setErrors] = useState({});
-
-  const validate = () => {
-    let temp = {};
-    temp.b = parseFloat(values.b) >= 0 ? '' : 'Divisor must not be zero';
-
-    setErrors({
-      ...temp,
-    });
-
-    return Object.values(temp).every(x => x === '');
-  };
-
   const resetForm = () => {
     setValues(initialValues);
     setSol([]);
-    setErrors({});
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (validate()) {
-      setSol(calculate(values.a, values.b));
-    }
+    setSol(calculate(values.a, values.b));
   };
 
   return (
@@ -77,7 +61,11 @@ export default function Division() {
               label="Divisor"
               name="b"
               value={values.b}
-              error={errors.b}
+              InputProps={{
+                inputProps: {
+                  min: 1,
+                },
+              }}
               onChange={handleInputChange}
               required
               fullWidth
