@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, Grid, Box, Typography, Divider } from '@material-ui/core';
 
 import Controls from '../controls/Controls';
@@ -27,7 +27,7 @@ export default function Division() {
 
   const validate = () => {
     let temp = {};
-    temp.b = values.b === 0 ? '' : 'Divisor must not be zero';
+    temp.b = parseFloat(values.b) >= 0 ? '' : 'Divisor must not be zero';
 
     setErrors({
       ...temp,
@@ -36,17 +36,10 @@ export default function Division() {
     return Object.values(temp).every(x => x === '');
   };
 
-  useEffect(() => {
-    if (values.a !== '' && values.b !== '' && values.b !== 0) {
-      setSol(calculate(values.a, values.b));
-    } else {
-      setSol([]);
-    }
-  }, [values]);
-
   const resetForm = () => {
     setValues(initialValues);
     setSol([]);
+    setErrors({});
   };
 
   const handleSubmit = e => {
