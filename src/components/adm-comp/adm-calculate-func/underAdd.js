@@ -20,17 +20,11 @@ export const calculate = (n, fun) => {
           odr.push(`O(${i}) = ${getOrderM(i, n)}`);
         }
       }
-      //   for (let i = 0; i < g.length; i++) {
-      //     if (getOrderM(g[i], g.length) === g.length) arr.push(g[i]);
-      //   }
     } else {
       for (let i = 1; i < n; i++) {
         g.push(i);
         odr.push(`O(${i}) = ${getOrderM(i, n)}`);
       }
-      //   for (let i = 0; i < g.length; i++) {
-      //     if (getOrderM(g[i], g.length) === g.length) arr.push(g[i]);
-      //   }
     }
     let k = g.length;
     for (let i = 0; i < k; i++) {
@@ -41,7 +35,7 @@ export const calculate = (n, fun) => {
   ans.push('G = ' + g.join(', '));
   ans.push(`Order of group is ${g.length}`);
   ans.push(odr.join(', '));
-  ans.push('Generators = ' + arr.join(', '));
+  ans.push(`Generators = ${arr.length > 0 ? arr.join(', ') : 0}`);
   ans.push('No. of generators = ' + arr.length);
   return ans;
 };

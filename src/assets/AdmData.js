@@ -13,6 +13,7 @@ const ChineseRT = lazy(() => import('../components/adm-comp/ChineseRT'));
 const CountD = lazy(() => import('../components/adm-comp/CountD'));
 const Multiset = lazy(() => import('../components/adm-comp/Multiset'));
 const GAdd = lazy(() => import('../components/adm-comp/GAdd'));
+const Property = lazy(() => import('../components/adm-comp/Property'));
 
 export const data = [
   {
@@ -102,6 +103,15 @@ export const data = [
     formSection: (
       <Suspense fallback={<Loading />}>
         <GAdd />
+      </Suspense>
+    ),
+  },
+  {
+    id: 9,
+    title: 'Properties of nCr & nPr',
+    formSection: (
+      <Suspense fallback={<Loading />}>
+        <Property />
       </Suspense>
     ),
   },

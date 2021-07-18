@@ -5,7 +5,7 @@ import MathJax from 'react-mathjax';
 const useStyles = makeStyles(theme => ({
   root: {
     [theme.breakpoints.down('xs')]: {
-      maxWidth: 290,
+      width: '100%',
       overflowY: 'hidden',
       fontSize: '0.74rem',
     },
