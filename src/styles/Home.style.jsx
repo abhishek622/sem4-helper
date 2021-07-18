@@ -9,10 +9,9 @@ export const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${pic3})`,
     backgroundPosition: 'left bottom',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: '380px',
+    backgroundSize: '320px',
     [theme.breakpoints.down('sm')]: {
       backgroundPosition: 'center bottom',
-      backgroundSize: '320px',
     },
   },
   head: {
@@ -26,7 +25,7 @@ export const useStyles = makeStyles(theme => ({
   subject: {
     margin: '0 auto',
     '& :hover': {
-      background: 'linear-gradient(60deg, #ffa726, #fb8c00)',
+      backgroundColor: '#fc2f5f',
     },
     maxWidth: '30rem',
     [theme.breakpoints.down('xs')]: {

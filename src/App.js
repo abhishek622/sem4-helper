@@ -15,20 +15,15 @@ import { Err404 } from './pages/Err404';
 import { LayoutRoute } from './components/general/LayoutRoute';
 
 function App() {
-
   const theme = createMuiTheme({
     palette: {
       type: 'dark',
       primary: {
-        light: '#4dabf5',
         main: '#2196f3',
-        dark: '#1769aa',
         contrastText: '#fff',
       },
       secondary: {
-        light: '#ffcf33',
-        main: '#ffc400',
-        dark: '#b28900',
+        main: '#fc2f5f',
         contrastText: '#000',
       },
     },
@@ -36,35 +31,31 @@ function App() {
 
   return (
     <Router>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Switch>
+          <Route exact path="/" component={Home} />
 
-        <LayoutRoute path="/adm">
-          <Adm />
-        </LayoutRoute>
-        <LayoutRoute path="/coa">
-          <Coa />
-        </LayoutRoute>
-        <LayoutRoute path="/ad1">
-          <Ad1 />
-        </LayoutRoute>
-        <LayoutRoute path="/pme">
-          <Pme />
-        </LayoutRoute>
-        <LayoutRoute path="/csw2">
-          <Csw2 />
-        </LayoutRoute>
+          <LayoutRoute path="/adm">
+            <Adm />
+          </LayoutRoute>
+          <LayoutRoute path="/coa">
+            <Coa />
+          </LayoutRoute>
+          <LayoutRoute path="/ad1">
+            <Ad1 />
+          </LayoutRoute>
+          <LayoutRoute path="/pme">
+            <Pme />
+          </LayoutRoute>
+          <LayoutRoute path="/csw2">
+            <Csw2 />
+          </LayoutRoute>
 
-        <Route path="*">
-          <Err404 />
-        </Route>
-      </Switch>
-    </ThemeProvider>
-  </Router>
+          <Route exact path="*" component={Err404} />
+        </Switch>
+      </ThemeProvider>
+    </Router>
   );
 }
 
