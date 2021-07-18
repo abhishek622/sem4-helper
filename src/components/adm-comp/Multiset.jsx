@@ -55,6 +55,7 @@ export default function Multiset() {
               type="text"
               label="Enter Sequence"
               placeholder="1,2,3,4"
+              helperText="min = 2, max = 4 no."
               name="b"
               value={values.b}
               onChange={handleInputChange}
