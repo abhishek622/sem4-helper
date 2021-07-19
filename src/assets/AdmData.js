@@ -13,6 +13,7 @@ const ChineseRT = lazy(() => import('../components/adm-comp/ChineseRT'));
 const CountD = lazy(() => import('../components/adm-comp/CountD'));
 const Multiset = lazy(() => import('../components/adm-comp/Multiset'));
 const GAdd = lazy(() => import('../components/adm-comp/GAdd'));
+const SymmetricGrp = lazy(() => import('../components/adm-comp/SymmetricGrp'));
 const Property = lazy(() => import('../components/adm-comp/Property'));
 
 export const data = [
@@ -108,6 +109,15 @@ export const data = [
   },
   {
     id: 9,
+    title: 'Find Sn and An',
+    formSection: (
+      <Suspense fallback={<Loading />}>
+        <SymmetricGrp />
+      </Suspense>
+    ),
+  },
+  {
+    id: 10,
     title: 'Properties of nCr & nPr',
     formSection: (
       <Suspense fallback={<Loading />}>
