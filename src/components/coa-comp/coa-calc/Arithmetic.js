@@ -14,7 +14,7 @@ export const calculator = (a, b, optn, type) => {
       } else {
         temp = parseInt(x) - parseInt(y);
       }
-      result = doBaseCon(temp, 10, 2);
+      result = `(${temp})10 = (${doBaseCon(temp, 10, 2)})2`;
       break;
     case '2':
       x = doBaseCon(a, 8, 10);
@@ -24,7 +24,7 @@ export const calculator = (a, b, optn, type) => {
       } else {
         temp = parseInt(x) - parseInt(y);
       }
-      result = doBaseCon(temp, 10, 8);
+      result = `(${temp})10 = (${doBaseCon(temp, 10, 8)})8`;
       break;
     case '3':
       x = doBaseCon(a, 16, 10);
@@ -34,7 +34,7 @@ export const calculator = (a, b, optn, type) => {
       } else {
         temp = parseInt(x) - parseInt(y);
       }
-      result = doBaseCon(temp, 10, 16);
+      result = `(${temp})10 = (${doBaseCon(temp, 10, 16)})16`;
       break;
     case '4':
       if (optn === 'plus') {
@@ -46,7 +46,7 @@ export const calculator = (a, b, optn, type) => {
         y = bcdToDecimal(b.toString());
         temp = parseInt(x) - parseInt(y);
       }
-      result = DecToBcd(temp);
+      result = `(${temp})10 = (${DecToBcd(temp)})BCD)`;
       break;
     default:
       result = parseInt(a) + parseInt(b);
