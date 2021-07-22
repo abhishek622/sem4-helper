@@ -52,7 +52,7 @@ const rows = [
   createData(9, 'Insertion in heap', 'O(log n)'),
   createData(10, 'Constuct Heap', 'O(n log n)'),
   createData(11, 'Delete from heap', 'O(log n)'),
-  createData(12, 'Huffman coding', 'O(log n)'),
+  createData(12, 'Huffman coding', 'O(n log n)'),
   createData(13, 'DFS, BFS', 'O(V+E)'),
   createData(14, 'All pair Shortest', 'O(n\u00b3)'),
   createData(15, 'Karatsuba algorithm', `O(n^(log_2\u00b3))`),

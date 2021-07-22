@@ -15,9 +15,9 @@ export default function OrderComp() {
         O&#40;n<sup>1/2</sup>&#41; &#x3c; O&#40;n&#41; &#x3c; O&#40;n log n&#41;
         &#x3c; O&#40;n<sup>2</sup>&#41; &#x3c; O&#40;n<sup>k</sup>
         &#41; &#x3c; O&#40;2<sup>n</sup>&#41; &#x3c; O&#40;n<sup>n</sup>&#41;
-        &#x3c; O&#40;2
+        &#x3c; O&#40;n
         <sup>
-          2<sup>2</sup>
+          n<sup>2</sup>
         </sup>
         &#41;
       </Typography>
