@@ -61,7 +61,7 @@ export const data = [
   },
   {
     id: 5,
-    title: 'Complexity Analysis',
+    title: 'Time Complexity Analysis',
     formSection: (
       <Suspense fallback={<Loading />}>
         <OtherComp />

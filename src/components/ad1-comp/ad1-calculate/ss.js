@@ -11,7 +11,7 @@ export const calculate = a => {
         min = j;
       }
     }
-    if (min != i) {
+    if (min !== i) {
       // Swapping the elements
       let tmp = inputArr[i];
       inputArr[i] = inputArr[min];

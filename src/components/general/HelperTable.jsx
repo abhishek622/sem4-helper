@@ -7,7 +7,18 @@ import {
   TableCell,
   TableBody,
   Paper,
+  withStyles,
 } from '@material-ui/core';
+
+const StyledTableCell = withStyles(theme => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
 
 export default function HelperTable(props) {
   const { rows } = props;
@@ -17,7 +28,7 @@ export default function HelperTable(props) {
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell colSpan={2}>Time Complexity</TableCell>
+            <StyledTableCell colSpan={2}>Time Complexity</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
