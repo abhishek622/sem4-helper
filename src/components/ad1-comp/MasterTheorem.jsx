@@ -42,7 +42,7 @@ const initialFValues = {
   a: '',
   b: '',
   k: '',
-  i: '',
+  i: 0,
 };
 
 export default function MasterTheorem() {
@@ -235,7 +235,7 @@ export default function MasterTheorem() {
         </Typography>
         <Formula tex={exp} />
         <Typography variant="body1" gutterBottom>
-          Solution:
+          Time Complexity:
         </Typography>
         <Formula tex={sol} />
       </Box>

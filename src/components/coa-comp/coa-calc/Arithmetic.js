@@ -87,8 +87,8 @@ function bcdToDecimal(s) {
 
     // Reinitialize all variables
     // and compute the number.
-    if (check == 4 || i == 0) {
-      if (sum == 0 && check0 == 0) {
+    if (check === 4 || i === 0) {
+      if (sum === 0 && check0 === 0) {
         num = 1;
         check0 = 1;
       } else {
@@ -108,7 +108,7 @@ function bcdToDecimal(s) {
     num = Math.floor(num / 10);
   }
 
-  if (check0 == 1) return rev - 1;
+  if (check0 === 1) return rev - 1;
 
   return rev;
 }
