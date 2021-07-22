@@ -55,7 +55,7 @@ const rows = [
   createData(12, 'Huffman coding', 'O(log n)'),
   createData(13, 'DFS, BFS', 'O(V+E)'),
   createData(14, 'All pair Shortest', 'O(n\u00b3)'),
-  // createData(6, '', ''),
+  createData(15, 'Karatsuba algorithm', `O(n^(log_2\u00b3))`),
   // createData(6, '', ''),
   // createData(6, '', ''),
   // createData(6, '', ''),
