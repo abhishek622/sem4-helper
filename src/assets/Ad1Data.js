@@ -11,6 +11,7 @@ const TimeComplexity = lazy(() =>
 const SelecSort = lazy(() => import('../components/ad1-comp/SelecSort'));
 const MinHeap = lazy(() => import('../components/ad1-comp/MinHeap'));
 const OtherComp = lazy(() => import('../components/ad1-comp/OtherComp'));
+const OrderComp = lazy(() => import('../components/ad1-comp/OrderComp'));
 
 export const data = [
   {
@@ -19,6 +20,15 @@ export const data = [
     formSection: (
       <Suspense fallback={<Loading />}>
         <MasterTheorem />
+      </Suspense>
+    ),
+  },
+  {
+    id: 0,
+    title: 'Order of Time Complexity',
+    formSection: (
+      <Suspense fallback={<Loading />}>
+        <OrderComp />
       </Suspense>
     ),
   },
