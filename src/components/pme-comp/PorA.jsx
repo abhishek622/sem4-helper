@@ -26,26 +26,26 @@ const calculateA = (x, y, z) => {
 
 export default function PorA() {
   const classes = useStyles();
-  const [a, setA] = useState('');
+  const [p, setP] = useState('');
   const [i, setI] = useState('');
   const [n, setN] = useState('');
-  const [p, setP] = useState('');
+  const [a, setA] = useState('');
   const [errors, setErrors] = useState({});
   const [input1, setInput1] = useState(false);
   const [input2, setInput2] = useState(false);
 
   const validate = () => {
     let temp = {};
-    temp.a =
-      (!isNaN(parseFloat(a)) && isFinite(a)) || a === ''
-        ? ''
-        : 'A must be number';
-    temp.i = i >= 0 ? '' : 'i must be at least 0';
-    temp.n = n >= 0 ? '' : 'n must be at least 0';
     temp.p =
       (!isNaN(parseFloat(p)) && isFinite(p)) || p === ''
         ? ''
         : 'P must be number';
+    temp.i = i >= 0 ? '' : 'i must be at least 0';
+    temp.n = n >= 0 ? '' : 'n must be at least 0';
+    temp.a =
+      (!isNaN(parseFloat(a)) && isFinite(a)) || a === ''
+        ? ''
+        : 'A must be number';
 
     setErrors({
       ...temp,
@@ -57,8 +57,8 @@ export default function PorA() {
   const handleInputChange = e => {
     const { name, value } = e.target;
     switch (name) {
-      case 'a':
-        setA(value);
+      case 'p':
+        setP(value);
         break;
       case 'i':
         setI(value);
@@ -66,8 +66,8 @@ export default function PorA() {
       case 'n':
         setN(value);
         break;
-      case 'p':
-        setP(value);
+      case 'a':
+        setA(value);
         break;
       default:
         break;
@@ -86,10 +86,10 @@ export default function PorA() {
   }, [p, a]);
 
   const resetForm = () => {
-    setA('');
+    setP('');
     setI('');
     setN('');
-    setP('');
+    setA('');
     setInput1(false);
     setInput2(false);
     setErrors({});
@@ -98,10 +98,10 @@ export default function PorA() {
   const handleSubmit = e => {
     e.preventDefault();
     if (validate()) {
-      if (a === '') {
-        setA(calculateA(i, n, p));
-      } else if (p === '') {
+      if (p === '') {
         setP(calculateP(i, n, a));
+      } else if (a === '') {
+        setA(calculateA(i, n, p));
       }
     }
   };
@@ -121,14 +121,14 @@ export default function PorA() {
           <Grid item xs={12} sm={6}>
             <Controls.Input
               type="text"
-              label="Annual Value (A)"
-              name="a"
-              value={a}
-              onChange={handleInputChange}
-              error={errors.a}
+              label="Present Value (P)"
+              name="p"
+              value={p}
+              error={errors.p}
               InputProps={{
                 readOnly: input1,
               }}
+              onChange={handleInputChange}
               fullWidth
             />
           </Grid>
@@ -159,10 +159,10 @@ export default function PorA() {
           <Grid item xs={12} sm={6}>
             <Controls.Input
               type="text"
-              label="Present Value (P)"
-              name="p"
-              value={p}
-              error={errors.p}
+              label="Annual Value (A)"
+              name="a"
+              value={a}
+              error={errors.a}
               InputProps={{
                 readOnly: input2,
               }}
